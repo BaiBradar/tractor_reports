@@ -1,0 +1,29 @@
+<table class="profile" summary="Profile information">
+  <tr>
+    <td class="main">
+      <h1>
+        <%= @user.name %><br />
+        <%= @user.company %>
+      </h1>
+    </td>
+    <td class="sidebar round">
+      <i>Assets:</i><br />
+      <strong>Number of machines: </strong> <%= @user.tractors.count %><br />
+      <strong>Number of tractor drivers: </strong> <%= @user.tractor_drivers.count %> <br />
+      <strong>Number of lands: </strong><%= @user.lands.count %><br />
+      <strong>Number of operations: </strong><%= @user.operations.count %><br />
+    </td>
+  </tr>
+  <tr>
+    <td class="downbar round">
+      <nav>
+        <ul>
+          <li><%= link_to "Add machine", add_machine_path %></li>
+          <li><%= link_to "Add land", add_land_path %></li>
+          <li><%= link_to "Add tractor driver", add_tractor_driver_path %></li>
+          <li><%= link_to "Add operation", add_operation_path %></li>
+        </ul>
+      </nav>
+    </td>
+  </tr>
+</table>

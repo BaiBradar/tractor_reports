@@ -1,0 +1,29 @@
+<h1>Fuel load</h1>
+
+<table>
+  <tr>
+    <th>Amount</th>
+    <th>Loaded at</th>
+    <th>Tractor</th>
+    <th>Tractor driver</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @fuel_loads.each do |fuel_load| %>
+  <tr>
+    <td><%= fuel_load.amount %></td>
+    <td><%= fuel_load.loaded_at %></td>
+    <td><%= fuel_load.tractor_code %></td>
+    <td><%= fuel_load.tractor_driver_name %></td>
+    <td><%= link_to 'Show', fuel_load %></td>
+    <td><%= link_to 'Edit', edit_fuel_load_path(fuel_load) %></td>
+    <td><%= link_to 'Destroy', fuel_load, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Fuel load', new_fuel_load_path %>

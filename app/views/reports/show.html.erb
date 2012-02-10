@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Tractor driver name:</b>
+  <%= @report.tractor_driver_name %>
+</p>
+
+<p>
+  <b>Tractor code:</b>
+  <%= @report.tractor_code %>
+</p>
+
+<p>
+  <b>Deckers:</b>
+  <%= @report.deckers %>
+</p>
+
+<p>
+  <b>Operation name:</b>
+  <%= @report.operation_name %>
+</p>
+
+<p>
+  <b>Date:</b>
+  <%= @report.date %>
+</p>
+
+
+<%= link_to 'Edit', edit_report_path(@report) %> |
+<%= link_to 'Back', reports_path %>

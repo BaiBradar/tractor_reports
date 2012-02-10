@@ -1,0 +1,31 @@
+<table>
+  <tr>
+    <td>
+    <h1>
+      <strong> Add Land </strong>
+    </h1>
+
+    <%= form_for(@land) do |f|%>
+
+    <%= render 'shared/error_messages', :object => f.object %>
+
+    <div class='field'>
+      <%= f.label :name %><br />
+      <%= f.text_field :name %>
+    </div>
+
+    <div class="field">
+      <%= f.label :region %><br />
+      <%= f.text_field :region %>
+    </div>
+
+    <div class="action">
+      <%= f.submit "Add Land"%>
+    </div>
+  
+    <% end %>
+  </td>
+    <%= render 'shared/links' %>
+  </tr>
+</table>
+  

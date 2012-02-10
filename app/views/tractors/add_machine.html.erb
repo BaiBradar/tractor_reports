@@ -1,0 +1,36 @@
+<table>
+  <tr>
+    <td>
+    <h1>
+      <strong> Add Machine </strong>
+    </h1>
+
+    <%= form_for(@tractor) do |f|%>
+
+    <%= render 'shared/error_messages', :object => f.object %>
+
+    <div class='field'>
+      <%= f.label :registration %><br />
+      <%= f.text_field :registration %>
+    </div>
+
+    <div class="field">
+      <%= f.label :code %><br />
+      <%= f.text_field :code %>
+    </div>
+
+    <div class="field">
+      <%= f.label :current_fuel %><br />
+      <%= f.text_field :current_fuel %>
+    </div>
+
+    <div class="action">
+      <%= f.submit "Add machine"%>
+    </div>
+  
+    <% end %>
+    </td>
+      <%= render 'shared/links' %>
+  </tr>
+</table>
+    

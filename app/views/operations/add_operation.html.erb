@@ -1,0 +1,36 @@
+<table>
+  <tr>
+    <td>
+    <h1>
+      <strong> Add Operation </strong>
+    </h1>
+
+    <%= form_for(@operation) do |f|%>
+
+    <%= render 'shared/error_messages', :object => f.object %>
+
+    <div class='field'>
+      <%= f.label :name %><br />
+      <%= f.text_field :name %>
+    </div>
+
+    <div class="field">
+      <%= f.label :fuel_dk %><br />
+      <%= f.text_field :fuel_dk %>
+    </div>
+    
+    <div class="field">
+      <%= f.label :price_dk %><br />
+      <%= f.text_field :price_dk %>
+    </div>
+
+    <div class="action">
+      <%= f.submit "Add Operation"%>
+    </div>
+  
+    <% end %>
+  </td>
+    <%= render 'shared/links' %>
+  </tr>
+</table>
+  

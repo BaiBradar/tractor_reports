@@ -1,0 +1,26 @@
+<table>
+  <tr>
+    <td>
+    <h1>
+      <strong> Add Tractor Driver </strong>
+    </h1>
+
+    <%= form_for(@tractor_driver) do |f|%>
+
+    <%= render 'shared/error_messages', :object => f.object %>
+
+    <div class='field'>
+      <%= f.label :name %><br />
+      <%= f.text_field :name %>
+    </div>
+
+    <div class="action">
+      <%= f.submit "Add Driver"%>
+    </div>
+  
+    <% end %>
+  </td>
+    <%= render 'shared/links' %>
+  </tr>
+</table>
+  

@@ -1,0 +1,42 @@
+<%= form_for(@fuel_load) do |f| %>
+  <% if @fuel_load.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@fuel_load.errors.count, "error") %> prohibited this fuel_load from being saved:</h2>
+
+      <ul>
+      <% @fuel_load.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :amount %><br />
+    <%= f.text_field :amount %>
+  </div>
+  <div class="field">
+    <%= f.label :loaded_at %><br />
+    <%= f.datetime_select :loaded_at %>
+  </div>
+  <div class="drop-down menu">
+    Select tractor code<br />
+    <select name="fuel_load[tractor_code]">
+      <%= @tractors.each do |tractor|%>
+       <option><%= tractor.code %></option>
+      <% end %>
+    </select>
+  </div>
+  <div class="drop-down menu">
+    Select tractor driver <br />
+    <select name="fuel_load[tractor_driver_name]">
+      <%= @tractor_drivers.each do |driver|%>
+       <option><%= driver.name %></option>
+      <% end %>
+    </select>
+  </div>
+  
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

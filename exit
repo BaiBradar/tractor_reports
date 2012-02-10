@@ -1,0 +1,59 @@
+[33mcommit 13306e58193410fcc74da737af72eed060f81088[m
+Author: Krasimir Kirilov <bradar_91@abv,bg>
+Date:   Fri Feb 3 17:12:55 2012 +0200
+
+    end with 9
+
+[33mcommit 09eb849e525086d84ca8bffeddc82d6e33d9ce35[m
+Author: Krasimir Kirilov <bradar_91@abv,bg>
+Date:   Wed Feb 1 16:53:06 2012 +0200
+
+    User model with password, and user show page
+
+[33mcommit 6485f8c52a09f30785492b1a47f4538810bd9141[m
+Author: Krasimir Kirilov <bradar_91@abv,bg>
+Date:   Mon Jan 30 17:48:05 2012 +0200
+
+    Complete with chapter 6
+
+[33mcommit 4b6079d154d17fab176e02593276d4e5c190dc87[m
+Author: Krasimir Kirilov <bradar_91@abv,bg>
+Date:   Sun Jan 29 16:50:28 2012 +0200
+
+    Finished with layouts and routes
+
+[33mcommit 757be5fe9dca70335a0364b7fef076d71f492616[m
+Author: Krasimir Kirilov <bradar_91@abv,bg>
+Date:   Sun Jan 29 15:17:36 2012 +0200
+
+    Remove default rails page
+
+[33mcommit 2e1f45076d90772deb6bae9ab1d2f9095de6cac2[m
+Author: Krasimir Kirilov <bradar_91@abv,bg>
+Date:   Sun Jan 29 01:38:36 2012 +0200
+
+    Commit after 4 chapter
+
+[33mcommit b796de44bae0aaeab7562163e9fc79cdf88b46ea[m
+Author: Krasimir Kirilov <bradar_91@abv,bg>
+Date:   Sat Jan 28 19:09:39 2012 +0200
+
+    Done with static pages
+
+[33mcommit befbe2af39ab6b9c1b6e099599851675a3c43067[m
+Author: Krasimir Kirilov <bradar_91@abv,bg>
+Date:   Fri Jan 27 22:47:41 2012 +0200
+
+    Add a Pages controler
+
+[33mcommit 78f787fa41b8e4d91935e71176f346d3adcf8d95[m
+Author: Krasimir Kirilov <bradar_91@abv,bg>
+Date:   Fri Jan 27 20:15:43 2012 +0200
+
+    Improve the README
+
+[33mcommit 5366020c7c08320d096dc7c8089404f672dd82dd[m
+Author: Krasimir Kirilov <bradar_91@abv,bg>
+Date:   Fri Jan 27 20:10:42 2012 +0200
+
+    Initial commit
