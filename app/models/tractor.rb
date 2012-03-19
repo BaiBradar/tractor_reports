@@ -14,6 +14,10 @@ class Tractor < ActiveRecord::Base
   
   before_save :check_fuel
   
+  def add_fuel(amount)
+    self.current_fuel = self.current_fuel + amount
+  end
+  
   private
   
   def check_fuel

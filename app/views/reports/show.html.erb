@@ -1,6 +1,11 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <b>Land name:</b>
+  <%= @report.land_name %>
+</p>
+
+<p>
   <b>Tractor driver name:</b>
   <%= @report.tractor_driver_name %>
 </p>
@@ -11,13 +16,23 @@
 </p>
 
 <p>
-  <b>Deckers:</b>
-  <%= @report.deckers %>
+  <b>Operation name:</b>
+  <%= @report.operation_name %>
 </p>
 
 <p>
-  <b>Operation name:</b>
-  <%= @report.operation_name %>
+  <b>Decker:</b>
+  <%= @report.decker %>
+</p>
+
+<p>
+  <b>Salary of the driver:</b>
+  <%= @report.salary %>
+</p>
+
+<p>
+  <b>Approximate fuel cost:</b>
+  <%= @report.approximate_fuel_cost %>
 </p>
 
 <p>

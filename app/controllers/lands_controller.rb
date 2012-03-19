@@ -17,6 +17,6 @@ class LandsController < ApplicationController
     end
   end
   
-  def remove_land
+  def destroy
   end
 end

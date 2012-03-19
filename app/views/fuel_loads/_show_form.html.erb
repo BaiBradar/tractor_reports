@@ -1,0 +1,31 @@
+
+<p id="notice"><%= notice %></p>
+<% fuel_load_number = 0 %>
+<% @fuel_loads.each do |fuel_load| %>
+  <% fuel_load_number = fuel_load_number + 1 %>
+  <p>|--------------------|<%= fuel_load_number %>|--------------------|</p>
+  
+  <p>
+    <b>Amount:</b>
+    <%= fuel_load.amount %>
+  </p>
+
+  <p>
+    <b>Loaded at:</b>
+    <%= fuel_load.loaded_at %>
+  </p>
+
+  <p>
+    <b>Tractor:</b>
+    <%= fuel_load.tractor_code %>
+  </p>
+
+  <p>
+    <b>Tractor driver:</b>
+    <%= fuel_load.tractor_driver_name %>
+  </p>
+  
+<% end %>
+
+
+<%= link_to 'Back', fuel_loads_path %>

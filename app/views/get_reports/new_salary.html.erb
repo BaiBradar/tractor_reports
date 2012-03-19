@@ -1,0 +1,25 @@
+<%= form_tag(salary_path, @report) do |f| %>
+  
+  <div class="drop-down menu">
+  Select tractor driver<br />
+  <select name="report[tractor_driver_name]">
+    <%= @tractor_drivers.each do |driver|%>
+    <option><%= driver.name %></option>
+    <% end %>
+  </select>
+    
+  <div class="field">
+    <%= f.label "From:" %><br />
+    <%= f.date_select :date %>
+  </div>  
+  
+  <div class="field">
+    <%= f.label "To:" %><br />
+    <%= f.date_select :date %>
+  </div>
+  
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+  
+<% end %>

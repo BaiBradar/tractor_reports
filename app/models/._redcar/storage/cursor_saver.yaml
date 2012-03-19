@@ -1,0 +1,18 @@
+--- 
+cursor_positions: 
+  - :path: get_reports.rb
+    :cursor_offset: 0
+    :timestamp: 2012-02-16 23:56:58.038000 +02:00
+  - :path: land.rb
+    :cursor_offset: 0
+    :timestamp: 2012-02-10 15:09:20.154000 +02:00
+  - :path: operation.rb
+    :cursor_offset: 0
+    :timestamp: 2012-02-10 15:11:08.681000 +02:00
+  - :path: tractor_driver.rb
+    :cursor_offset: 0
+    :timestamp: 2012-02-10 15:11:56.666000 +02:00
+  - :path: User.rb
+    :cursor_offset: 0
+    :timestamp: 2012-02-10 15:11:33.377000 +02:00
+files_to_retain: 0

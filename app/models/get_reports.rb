@@ -1,0 +1,2 @@
+class GetReports
+end

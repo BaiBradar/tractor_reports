@@ -23,13 +23,25 @@ describe ReportsController do
   # This should return the minimal set of attributes required to create a valid
   # Report. As you add validations to Report, be sure to
   # update the return value of this method accordingly.
-  def valid_attributes
-    {}
+  
+  before(:each) do
+    @user = Factory(:user)
+    test_sign_in(@user)
+    @report = 
+    { 
+      :user_id => 1,
+      :date => "2012-02-13",
+      :decker => 30.0,
+      :operation_name => "Dulboka oran",
+      :tractor_code => "5107",
+      :tractor_driver_name => "Emil Borisov",
+      :land_name => "Obnova"
+    }
   end
 
   describe "GET index" do
     it "assigns all reports as @reports" do
-      report = Report.create! valid_attributes
+      report = Reports.create! @report
       get :index
       assigns(:reports).should eq([report])
     end
@@ -37,7 +49,7 @@ describe ReportsController do
 
   describe "GET show" do
     it "assigns the requested report as @report" do
-      report = Report.create! valid_attributes
+      report = Report.create! @report
       get :show, :id => report.id.to_s
       assigns(:report).should eq(report)
     end

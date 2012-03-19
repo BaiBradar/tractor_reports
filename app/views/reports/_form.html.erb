@@ -11,6 +11,13 @@
     </div>
   <% end %>
 
+  <div class="drop-down menu">
+    Select land<br />
+    <select name="report[land_name]">
+      <%= @lands.each do |land|%>
+       <option><%= land.name %></option>
+      <% end %>
+    </select>
   <div class="field">
     <%= f.label :tractor_driver_name %><br />
     <%= f.text_field :tractor_driver_name %>
@@ -19,13 +26,16 @@
     <%= f.label :tractor_code %><br />
     <%= f.text_field :tractor_code %>
   </div>
-  <div class="field">
-    <%= f.label :deckers %><br />
-    <%= f.text_field :deckers %>
-  </div>
-  <div class="field">
-    <%= f.label :operation_name %><br />
-    <%= f.text_field :operation_name %>
+  <div class="drop-down menu">
+    Select operation<br />
+    <select name="report[operation_name]">
+      <%= @operations.each do |operation|%>
+       <option><%= operation.name %></option>
+      <% end %>
+    </select>
+  <div class="field"> 
+    <%= f.label :decker %><br />
+    <%= f.number_field :decker %>
   </div>
   <div class="field">
     <%= f.label :date %><br />

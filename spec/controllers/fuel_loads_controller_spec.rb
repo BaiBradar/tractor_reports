@@ -29,28 +29,36 @@ describe FuelLoadsController do
   before(:each) do
     @user = Factory(:user)
     test_sign_in(@user)
-    @tractor = @user.tractors.build(Factory(:tractor))
-    @tractor_driver = @user.tractor_drivers.build(Factory(:driver))
+    @tractor = Factory(:tractor)
+    @tractor_driver = Factory(:tractor_driver)
   end
 
   def valid_attributes
-    { :amount => "120".to_d, :tractor_code => @tractor.code, :tractor_driver_name => @tractor_driver.name}
+    { :amount => "120".to_d, :loaded_at => "2012-02-11 11:48:00.000000", :tractor_code => @tractor.code, :tractor_driver_name => @tractor_driver.name }
   end
   
   
   describe "GET index" do
     it "assigns all fuel_loads as @fuel_loads" do
-      fuel_load = @user.fuel_load.build valid_attributes
+      fuel_load = @user.fuel_loads.build valid_attributes
       get :index
       assigns(:fuel_loads).should eq([fuel_load])
     end
   end
 
-  describe "GET show" do
-    it "assigns the requested fuel_load as @fuel_load" do
-      fuel_load = @user.fuel_load.build valid_attributes
-      get :show, :id => fuel_load.id.to_s
-      assigns(:fuel_load).should eq(fuel_load)
+  describe "GET show_for_drivers" do
+    it "assigns fuel loads for this driver as @fuel_loads" do
+      fuel_load = @user.fuel_loads.build valid_attributes
+      get :load_for_driver, :tractor_driver_name => @tractor_driver.name
+      assigns(:fuel_loads).should eq([fuel_load])
+    end
+  end
+  
+  describe "GET show_for_tractors" do
+    it "assigns fuel loads for this tractor as @fuel_loads" do
+      fuel_load = @user.fuel_loads.build valid_attributes
+      get :load_for_tractor, :tractor_code => @tractor.code
+      assigns(:fuel_loads).should eq([fuel_load])
     end
   end
 
@@ -61,13 +69,6 @@ describe FuelLoadsController do
     end
   end
 
-  describe "GET edit" do
-    it "assigns the requested fuel_load as @fuel_load" do
-      fuel_load = FuelLoad.create! valid_attributes
-      get :edit, :id => fuel_load.id.to_s
-      assigns(:fuel_load).should eq(fuel_load)
-    end
-  end
 
   describe "POST create" do
     describe "with valid params" do
@@ -85,7 +86,7 @@ describe FuelLoadsController do
 
       it "redirects to the created fuel_load" do
         post :create, :fuel_load => valid_attributes
-        response.should redirect_to(FuelLoad.last)
+        response.should redirect_to(fuel_loads_path)
       end
     end
 
@@ -106,63 +107,20 @@ describe FuelLoadsController do
     end
   end
 
-  describe "PUT update" do
-    describe "with valid params" do
-      it "updates the requested fuel_load" do
-        fuel_load = FuelLoad.create! valid_attributes
-        # Assuming there are no other fuel_loads in the database, this
-        # specifies that the FuelLoad created on the previous line
-        # receives the :update_attributes message with whatever params are
-        # submitted in the request.
-        FuelLoad.any_instance.should_receive(:update_attributes).with({'these' => 'params'})
-        put :update, :id => fuel_load.id, :fuel_load => {'these' => 'params'}
-      end
 
-      it "assigns the requested fuel_load as @fuel_load" do
-        fuel_load = FuelLoad.create! valid_attributes
-        put :update, :id => fuel_load.id, :fuel_load => valid_attributes
-        assigns(:fuel_load).should eq(fuel_load)
-      end
+  #describe "DELETE destroy" do
+  #  it "destroys the requested fuel_load" do
+   #   fuel_load = @user.fuel_loads.build valid_attributes
+  #    expect {
+   #     delete :destroy, :id => fuel_load.id.to_s
+   #   }.to change(FuelLoad, :count).by(-1)
+  #  end
 
-      it "redirects to the fuel_load" do
-        fuel_load = FuelLoad.create! valid_attributes
-        put :update, :id => fuel_load.id, :fuel_load => valid_attributes
-        response.should redirect_to(fuel_load)
-      end
-    end
-
-    describe "with invalid params" do
-      it "assigns the fuel_load as @fuel_load" do
-        fuel_load = FuelLoad.create! valid_attributes
-        # Trigger the behavior that occurs when invalid params are submitted
-        FuelLoad.any_instance.stub(:save).and_return(false)
-        put :update, :id => fuel_load.id.to_s, :fuel_load => {}
-        assigns(:fuel_load).should eq(fuel_load)
-      end
-
-      it "re-renders the 'edit' template" do
-        fuel_load = FuelLoad.create! valid_attributes
-        # Trigger the behavior that occurs when invalid params are submitted
-        FuelLoad.any_instance.stub(:save).and_return(false)
-        put :update, :id => fuel_load.id.to_s, :fuel_load => {}
-        response.should render_template("edit")
-      end
-    end
-  end
-
-  describe "DELETE destroy" do
-    it "destroys the requested fuel_load" do
-      fuel_load = FuelLoad.create! valid_attributes
-      expect {
-        delete :destroy, :id => fuel_load.id.to_s
-      }.to change(FuelLoad, :count).by(-1)
-    end
-
-    it "redirects to the fuel_loads list" do
-      fuel_load = FuelLoad.create! valid_attributes
-      delete :destroy, :id => fuel_load.id.to_s
-      response.should redirect_to(fuel_loads_url)
-    end
-  end
+  #it "redirects to the fuel_loads list" do
+    #  fuel_load = @user.fuel_loads.build valid_attributes
+     # delete :destroy, :id => fuel_load.id.to_s
+    #  response.should redirect_to(fuel_loads_url)
+   # end
+  #end
 
 end

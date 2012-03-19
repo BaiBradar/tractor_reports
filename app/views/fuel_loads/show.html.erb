@@ -1,25 +1,2 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <b>Amount:</b>
-  <%= @fuel_load.amount %>
-</p>
-
-<p>
-  <b>Loaded at:</b>
-  <%= @fuel_load.loaded_at %>
-</p>
-
-<p>
-  <b>Tractor:</b>
-  <%= @fuel_load.tractor_code %>
-</p>
-
-<p>
-  <b>Tractor driver:</b>
-  <%= @fuel_load.tractor_driver_name %>
-</p>
-
-
-<%= link_to 'Edit', edit_fuel_load_path(@fuel_load) %> |
-<%= link_to 'Back', fuel_loads_path %>
+<%= render "show_form" %>

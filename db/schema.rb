@@ -11,13 +11,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120209234137) do
+ActiveRecord::Schema.define(:version => 20120213190150) do
 
   create_table "fuel_loads", :force => true do |t|
     t.float    "amount"
     t.datetime "loaded_at"
-    t.integer  "tractor_id"
-    t.integer  "tractor_driver_id"
+    t.string   "tractor_code"
+    t.string   "tractor_driver_name"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -38,6 +38,20 @@ ActiveRecord::Schema.define(:version => 20120209234137) do
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "reports", :force => true do |t|
+    t.string   "land_name"
+    t.string   "tractor_driver_name"
+    t.string   "tractor_code"
+    t.string   "operation_name"
+    t.integer  "user_id"
+    t.integer  "decker"
+    t.date     "date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.float    "salary"
+    t.float    "approximate_fuel_cost"
   end
 
   create_table "tractor_drivers", :force => true do |t|

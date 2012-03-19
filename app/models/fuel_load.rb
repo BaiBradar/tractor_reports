@@ -10,4 +10,5 @@ class FuelLoad < ActiveRecord::Base
   belongs_to :user
   belongs_to :tractor
   belongs_to :tractor_driver
+  
 end

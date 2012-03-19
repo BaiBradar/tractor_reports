@@ -1,0 +1,2 @@
+module GetReportsHelper
+end

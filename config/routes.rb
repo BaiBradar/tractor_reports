@@ -13,6 +13,12 @@ AwesomeApp::Application.routes.draw do
   resources :operations
   resources :tractor_drivers
   resources :lands
+  resources :get_reports
+  
+  match "new_salary", :to => "get_reports#new_salary"
+  
+  match "/load_for_tractor", :to => "fuel_loads#show_for_tractor"
+  match "/load_for_driver", :to => "fuel_loads#show_for_driver"
   
   match "/add_machine", :to => 'tractors#add_machine'
   match "/add_tractor_driver", :to => 'tractor_drivers#add_tractor_driver'
